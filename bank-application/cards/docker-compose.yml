@@ -1,0 +1,34 @@
+services:
+    accounts:
+      image: kasaudhanriya/accounts:latest
+      ports:
+        - "8081:8081"
+      networks:
+        - bank-network
+    cards:
+      image: kasaudhanriya/cards:latest
+      ports: 
+        - "8082:8082"
+      networks: 
+        - bank-network
+    loans:
+      image: kasaudhanriya/loans:latest
+      ports: 
+        - "8085:8085"
+      networks: 
+        - bank-network
+    configserver:
+      image: kasaudhanriya/configserver:latest
+      ports: 
+        - "8071:8071"
+      networks: 
+        - bank-network   
+    insurance:
+      image: kasaudhanriya/insurance:latest
+      ports: 
+        - "8087:8087"
+      networks: 
+        - bank-network
+        
+networks:
+  bank-network: {}
